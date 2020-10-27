@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Quest</title>
+	<style type="text/css">
+		.box1{
+			background:gray;
+			width:2000px;
+			height:850px;
+			background-image:url(background.png);
+			background-size:100% 100%;
+		}
+		.img1{
+			height:900px;
+			width:2000px;
+		}
+		.orange-div{
+			background:orange;
+			width:200px;
+			height:400px;
+			text-align:center;
+			padding-top:20px;
+		}
+		.apple{
+			position:absolute;
+			height:50px;
+			width:50px;
+			left:500px;
+			top:500px;
+		}
+		.paper{
+			position:absolute;
+			height:50px;
+			width:50px;
+			top:100px;
+			left:1000px;
+			display:none;
+		}
+		.mush{
+			position:absolute;
+			height:50px;
+			width:50px;
+			top:300px;
+			left:1500px;
+			display:none;
+		}
+		.bfly{
+			position:absolute;
+			height:50px;
+			width:50px;
+			top:700px;
+			left:1000px;
+			display:none;
+		}
+	</style>
+</head>
+<body>
+<div class="box1">
+	<div class="orange-div">
+		<p style="margin-top:0px; margin-bottom:0px; font-size:30px; font-weight:bold; font-family:Arial;">Найди:</p>
+		<p style="font-size:20px; font-family:Arial; font-weight:bold" class="yab">1. Яблоко</p>
+		<p style="font-size:20px; font-family:Arial; font-weight:bold" class="grib">2. Гриб</p>
+		<p style="font-size:20px; font-family:Arial; font-weight:bold" class="bf">3. Бабочку</p>
+		<p style="font-size:20px; font-family:Arial; font-weight:bold" class="list">4. Лист</p>
+		<p style="margin-top:0px; margin-bottom:0px; font-size:30px; font-weight:bold; font-family:Arial;">Очки:<span class="score" style="color:red;"></span></p>
+	</div>
+	<div class="apple">
+		<img src="apple.png" style="height:50px; width:50px;">
+	</div>
+	<div class="paper">
+		<img src="paper.png" style="height:50px; width:50px;">
+	</div>
+	<div class="mush">
+		<img src="mush.png" style="height:50px; width:50px;">
+	</div>
+	<div class="bfly">
+		<img src="butterfly.png" style="height:50px; width:50px;">
+	</div>
+
+
+
+
+
+
+
+<script type="text/javascript">
+	let score = 0;
+	document.querySelector(".score").innerHTML = score;
+	document.querySelector(".apple").onclick = function(){
+		alert("Молодец! Ты нашел яблоко.")
+		document.querySelector(".apple").style.display = "none";
+		document.querySelector(".paper").style.display = "block";
+		document.querySelector(".yab").style.textDecoration = "line-through"
+		score = score + 1;
+		document.querySelector(".score").innerHTML = score;
+	}
+	document.querySelector(".paper").onclick = function(){
+		alert("Молодец! Ты нашел лист.")
+		document.querySelector(".paper").style.display = "none";
+		document.querySelector(".mush").style.display = "block";
+		document.querySelector(".list").style.textDecoration = "line-through"
+		score = score + 1;
+		document.querySelector(".score").innerHTML = score;
+	}
+	document.querySelector(".mush").onclick = function(){
+		alert("Молодец! Ты нашел гриб.")
+		document.querySelector(".mush").style.display = "none";
+		document.querySelector(".bfly").style.display = "block";
+		document.querySelector(".grib").style.textDecoration = "line-through"
+		score = score + 1;
+		document.querySelector(".score").innerHTML = score;
+	}
+	document.querySelector(".bfly").onclick = function(){
+		alert("Отлично, ты нашел все!")
+		document.querySelector(".box1").style.display = "none";
+		document.querySelector(".bf").style.textDecoration = "line-through"
+		score = score + 1;
+		document.querySelector(".score").innerHTML = score;
+	}
+</script>
+</div>
+</body>
+</html>
